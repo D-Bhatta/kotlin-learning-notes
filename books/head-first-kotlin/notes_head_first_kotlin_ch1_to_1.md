@@ -39,33 +39,37 @@ Process finished with exit code 0
 
 ```kotlin
 fun main(args: Array<String>) {
-    println("pow!")
+  start()
+}
 
-    var x = 3
-    val name = "Cormoran"
-    x = x * 10
-    println("x is $x")
-    // this is a comment
-    while (x > 20) {
-        x = x - 1
-        println("x is now $x")
-    }
-    for (i in 1..10) {
-        x = x + 1
-        println("x is now $x")
-    }
+fun start(){
+  println("pow!")
 
-    if (x == 20) {
-        println("x must be 20")
-    } else if (x == 30) {
-        println("x must be 30")
-    } else {
-        println("x isn't 20 or 30")
-    }
+  var x = 3
+  val name = "Cormoran"
+  x = x * 10
+  println("x is $x")
+  // this is a comment
+  while (x > 20) {
+    x = x - 1
+    println("x is now $x")
+  }
+  for (i in 1..10) {
+    x = x + 1
+    println("x is now $x")
+  }
 
-    if (name.equals("Cormoran")) {
-        println("$name Strike")
-    }
+  if (x == 20) {
+    println("x must be 20")
+  } else if (x == 30) {
+    println("x must be 30")
+  } else {
+    println("x isn't 20 or 30")
+  }
+
+  if (name.equals("Cormoran")) {
+    println("$name Strike")
+  }
 }
 ```
 
@@ -184,7 +188,126 @@ internal class SubtractorTest {
 }
 ```
 
+## Var and Val
 
+- `var` is for variables whose value will change, and `val` is for whose value will stay the same.
+
+## Looping
+
+- Create a class called `Looping`
+- Add a function `loop`.
+
+```kotlin
+/* Looping.kt */
+class Looping {
+    fun loop() {
+        var x = 0
+        println("Before the loop: x = $x")
+        while (x < 5) {
+            x++
+            println("In the loop: x = $x")
+        }
+        println("After loop execution: x = $x")
+    }
+}
+```
+
+- We call the function.
+
+```kotlin
+fun main() {
+    Looping().loop()
+}
+```
+
+- We run the function:
+
+```powershell
+Before the loop: x = 0
+In the loop: x = 1
+In the loop: x = 2
+In the loop: x = 3
+In the loop: x = 4
+In the loop: x = 5
+After loop execution: x = 5
+
+Process finished with exit code 0
+```
+
+## Inline If
+
+- If and else can return values as well using the syntax `if (condition) value else value`.
+- Create a class `InlineIf`. Create 2 functions:
+
+```kotlin
+/* InlineIf.kt */
+class InlineIf {
+    fun inlineIfReturnFromElse(){
+        val x = 3
+        val y = 4
+        println(if (x > y) "X is greater than Y" else "Y is greater than X")
+    }
+    fun inlineIfReturnFromIf(){
+        val x = 4
+        val y = 3
+        println(if (x > y) "X is greater than Y" else "Y is greater than X")
+    }
+}
+```
+
+- Call the function and run it.
+
+```kotlin
+fun main() {
+    InlineIf().inlineIfReturnFromIf()
+    InlineIf().inlineIfReturnFromElse()
+}
+```
+
+```powershell
+X is greater than Y
+Y is greater than X
+
+Process finished with exit code 0
+```
+
+## Exercise: Printing `YabbaDabbaDo`
+
+- Create the class `YabbaDabbaDo` and the `printYabbaDabbaDo`:
+
+```kotlin
+/* YabbaDabbaDo.kt */
+class YabbaDabbaDo {
+    fun printYabbaDabbaDo() {
+        var x = 1
+
+        while (x < 3) {
+            print(if (x == 1) "Yab" else "Dab")
+            print("ba")
+            x = x + 1
+        }
+        if (x == 3) println("Do")
+    }
+}
+```
+
+- Call the function and run it:
+
+```kotlin
+fun main() {
+    YabbaDabbaDo().printYabbaDabbaDo()
+}
+```
+
+```powershell
+YabbaDabbaDo
+
+Process finished with exit code 0
+```
+
+## REPL
+
+- Read Eval Print Loop is available from Tools -> Kotlin -> Kotlin REPL
 
 ## Additional notes
 

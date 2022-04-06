@@ -1,4 +1,8 @@
-fun main(args: Array<String>) {
+fun main() {
+    YabbaDabbaDo().printYabbaDabbaDo()
+}
+
+fun start() {
     println("pow!")
 
     var x = 3
